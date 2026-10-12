@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLEVA — Магазин обуви</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+
+        <a href="#" class="logo">SOLE<span>VA</span></a>
+
+        <nav class="nav-links">
+            <a href="#categories">Категории</a>
+            <a href="#shop">Магазин</a>
+            <a href="#about">О нас</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <button class="icon-btn" onclick="toggleTheme()" id="themeBtn">☀️</button>
+            <button class="icon-btn" onclick="openCart()">🛒</button>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <small>STEP INTO YOUR STYLE</small>
+
+        <h1>
+            ОБУВЬ<br>
+            <span>ТВОЕГО</span><br>
+            СТИЛЯ.
+        </h1>
+
+        <p>
+            Современная обувь для города, спорта и каждого дня.
+            Найди пару, которая подходит именно тебе.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#shop" class="btn btn-primary">
+                Смотреть обувь
+            </a>
+
+            <a href="#about" class="btn btn-secondary">
+                Узнать больше
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="hero-shoe">
+
+        <div class="hero-circle"></div>
+
+        <img
+            src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5824.png"
+            alt="Кроссовки"
+        >
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="section" id="categories">
+
+    <div class="section-title">
+        <div>
+            <p>ВЫБЕРИ СВОЙ СТИЛЬ</p>
+            <h2>Категории</h2>
+        </div>
+    </div>
+
+
+    <div class="categories">
+
+        <div class="category" onclick="chooseCategory('Кроссовки')">
+            <h3>Кроссовки</h3>
+            <p>Для города и прогулок</p>
+        </div>
+
+        <div class="category" onclick="chooseCategory('Бег')">
+            <h3>Бег</h3>
+            <p>Лёгкие модели для спорта</p>
+        </div>
+
+        <div class="category" onclick="chooseCategory('Повседневная')">
+      
+            <h3>Повседневная</h3>
+            <p>Комфорт на каждый день</p>
+        </div>
+
+        <div class="category" onclick="chooseCategory('Ботинки')">
+           
+            <h3>Ботинки</h3>
+            <p>Стиль и защита</p>
+        </div>
+
+        <div class="category" onclick="chooseCategory('Спорт')">
+          
+            <h3>Спорт</h3>
+            <p>Для активного образа жизни</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SHOP -->
+
+<section class="section" id="shop">
+
+    <div class="section-title">
+        <div>
+            <p>НАША КОЛЛЕКЦИЯ</p>
+            <h2>Магазин</h2>
+        </div>
+    </div>
+
+
+    <div class="shop-tools">
+
+        <input
+            type="text"
+            class="search"
+            id="search"
+            placeholder="🔎 Найти обувь..."
+            oninput="applyFilters()"
+        >
+
+        <div class="filters">
+
+            <button class="filter active" onclick="setCategory('Все', this)">
+                Все
+            </button>
+
+            <button class="filter" onclick="setCategory('Кроссовки', this)">
+                Кроссовки
+            </button>
+
+            <button class="filter" onclick="setCategory('Бег', this)">
+                Бег
+            </button>
+
+            <button class="filter" onclick="setCategory('Повседневная', this)">
+                Повседневная
+            </button>
+
+            <button class="filter" onclick="setCategory('Ботинки', this)">
+                Ботинки
+            </button>
+
+            <button class="filter" onclick="setCategory('Спорт', this)">
+                Спорт
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <article class="product" data-category="Кроссовки" data-name="Aero X">
+
+            <div class="product-image">
+
+                <img
+                    src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5823.png"
+                    alt="Aero X"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">Кроссовки</div>
+
+                <h3>Aero X</h3>
+
+                <p class="product-description">
+                    Лёгкие городские кроссовки с удобной подошвой.
+                </p>
+
+                <div class="sizes-title">
+                    Выберите размер:
+                </div>
+
+                <div class="sizes">
+                    <button class="size">36</button>
+                    <button class="size">37</button>
+                    <button class="size">38</button>
+                    <button class="size">39</button>
+                    <button class="size">40</button>
+                    <button class="size">41</button>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        1 299 000 сум
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="addToCart('Aero X', 1299000, this)"
+                    >
+                        + Корзина
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 2 -->
+
+        <article class="product" data-category="Бег" data-name="Runner Pro">
+
+            <div class="product-image">
+
+                <img
+                    src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5826.png"
+                    alt="Runner Pro"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">Бег</div>
+
+                <h3>Runner Pro</h3>
+
+                <p class="product-description">
+                    Амортизирующая модель для тренировок и пробежек.
+                </p>
+
+                <div class="sizes-title">
+                    Выберите размер:
+                </div>
+
+                <div class="sizes">
+                    <button class="size">37</button>
+                    <button class="size">38</button>
+                    <button class="size">39</button>
+                    <button class="size">40</button>
+                    <button class="size">41</button>
+                    <button class="size">42</button>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        1 499 000 сум
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="addToCart('Runner Pro', 1499000, this)"
+                    >
+                        + Корзина
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 3 -->
+
+        <article class="product" data-category="Повседневная" data-name="Street One">
+
+            <div class="product-image">
+
+                <img
+                    src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5816.png"
+                    alt="Street One"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">Повседневная</div>
+
+                <h3>Street One</h3>
+
+                <p class="product-description">
+                    Минималистичный дизайн для прогулок и города.
+                </p>
+
+                <div class="sizes-title">
+                    Выберите размер:
+                </div>
+
+                <div class="sizes">
+                    <button class="size">36</button>
+                    <button class="size">37</button>
+                    <button class="size">38</button>
+                    <button class="size">39</button>
+                    <button class="size">40</button>
+                    <button class="size">41</button>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        999 000 сум
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="addToCart('Street One', 999000, this)"
+                    >
+                        + Корзина
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 4 -->
+
+        <article class="product" data-category="Ботинки" data-name="Urban Boot">
+
+            <div class="product-image">
+
+                <img
+                    src="https://pngimg.com/uploads/converse/converse_PNG22.png"
+                    alt="Urban Boot"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">Ботинки</div>
+
+                <h3>Urban Boot</h3>
+
+                <p class="product-description">
+                    Высокая модель с акцентом на городской стиль.
+                </p>
+
+                <div class="sizes-title">
+                    Выберите размер:
+                </div>
+
+                <div class="sizes">
+                    <button class="size">38</button>
+                    <button class="size">39</button>
+                    <button class="size">40</button>
+                    <button class="size">41</button>
+                    <button class="size">42</button>
+                    <button class="size">43</button>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        1 899 000 сум
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="addToCart('Urban Boot', 1899000, this)"
+                    >
+                        + Корзина
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 5 -->
+
+        <article class="product" data-category="Спорт" data-name="Court Max">
+
+            <div class="product-image">
+
+                <img
+                    src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5800.png"
+                    alt="Court Max"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">Спорт</div>
+
+                <h3>Court Max</h3>
+
+                <p class="product-description">
+                    Устойчивая спортивная модель для активных тренировок.
+                </p>
+
+                <div class="sizes-title">
+                    Выберите размер:
+                </div>
+
+                <div class="sizes">
+                    <button class="size">38</button>
+                    <button class="size">39</button>
+                    <button class="size">40</button>
+                    <button class="size">41</button>
+                    <button class="size">42</button>
+                    <button class="size">43</button>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        1 399 000 сум
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="addToCart('Court Max', 1399000, this)"
+                    >
+                        + Корзина
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 6 -->
+
+        <article class="product" data-category="Повседневная" data-name="Classic White">
+
+            <div class="product-image">
+
+                <img
+                    src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5791.png"
+                    alt="Classic White"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">Повседневная</div>
+
+                <h3>Classic White</h3>
+
+                <p class="product-description">
+                    Классическая светлая модель, которая подходит ко всему.
+                </p>
+
+                <div class="sizes-title">
+                    Выберите размер:
+                </div>
+
+                <div class="sizes">
+                    <button class="size">36</button>
+                    <button class="size">37</button>
+                    <button class="size">38</button>
+                    <button class="size">39</button>
+                    <button class="size">40</button>
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        899 000 сум
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="addToCart('Classic White', 899000, this)"
+                    >
+                        + Корзина
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- DELIVERY -->
+
+<section class="section">
+
+    <div class="section-title">
+        <div>
+            <p>ПОКУПКА БЕЗ ЛИШНИХ ПРОБЛЕМ</p>
+            <h2>Как это работает?</h2>
+        </div>
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+       
+            <h3>1. Выбери обувь</h3>
+            <p>
+                Найди понравившуюся модель и выбери подходящий размер.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>2. Добавь в корзину</h3>
+            <p>
+                Проверь выбранные модели и размеры в корзине.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>3. Получи заказ</h3>
+            <p>
+                Заполни данные доставки и дождись своей новой пары.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+    <div class="about">
+
+        <div>
+
+            <p style="color:var(--accent);">
+                О SOLEVA
+            </p>
+
+            <h2>
+                ОБУВЬ,<br>
+                КОТОРУЮ<br>
+                ХОЧЕТСЯ НОСИТЬ.
+            </h2>
+
+            <p>
+                SOLEVA — современный магазин обуви, где можно
+                найти модели для города, спорта и повседневной жизни.
+                Мы сделали сайт простым, чтобы найти нужную пару
+                можно было за несколько кликов.
+            </p>
+
+        </div>
+
+        <div class="about-box">
+
+            <div class="about-number">6+</div>
+
+            <h3>моделей в коллекции</h3>
+
+            <p>
+                Разные стили, размеры и категории.
+                Коллекция будет постепенно расширяться.
+            </p>
+
+            <br>
+
+            <div class="about-number">36–44</div>
+
+            <h3>доступные размеры</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section">
+
+    <div class="section-title">
+        <div>
+            <p>ЧАСТЫЕ ВОПРОСЫ</p>
+            <h2>FAQ</h2>
+        </div>
+    </div>
+
+    <div class="faq">
+
+        <details>
+            <summary>Как выбрать размер?</summary>
+            <p>
+                Открой карточку товара и нажми на подходящий размер.
+                Выбранный размер подсветится зелёным.
+            </p>
+        </details>
+
+        <details>
+            <summary>Можно ли изменить заказ?</summary>
+            <p>
+                В этой демонстрационной версии заказа можно просто
+                удалить товар из корзины и добавить его заново.
+            </p>
+        </details>
+
+        <details>
+            <summary>Есть ли доставка?</summary>
+            <p>
+                Да. На настоящем магазине здесь можно указать
+                доступные города и стоимость доставки.
+            </p>
+        </details>
+
+        <details>
+            <summary>Можно ли вернуть обувь?</summary>
+            <p>
+                Условия возврата зависят от магазина.
+                В настоящем проекте сюда можно добавить правила возврата.
+            </p>
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTS -->
+
+<section class="section" id="contacts">
+
+    <div class="section-title">
+        <div>
+            <p>МЫ НА СВЯЗИ</p>
+            <h2>Контакты</h2>
+        </div>
+    </div>
+
+    <div class="contact">
+
+        <div class="contact-card">
+
+            <div class="contact-item">
+                <span>Телефон</span>
+                +998 90 000 00 00
+            </div>
+
+            <div class="contact-item">
+                <span>Email</span>
+                hello@soleva.uz
+            </div>
+
+            <div class="contact-item">
+                <span>Telegram</span>
+                @soleva_shop
+            </div>
+
+            <div class="contact-item">
+                <span>Время работы</span>
+                Пн–Сб: 09:00–20:00
+            </div>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <form
+                class="contact-form"
+                onsubmit="sendMessage(event)"
+            >
+
+                <input
+                    type="text"
+                    placeholder="Ваше имя"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <textarea
+                    rows="5"
+                    placeholder="Ваше сообщение"
+                    required
+                ></textarea>
+
+                <button class="btn btn-primary">
+                    Отправить
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>SOLEVA</strong>
+
+    <p style="margin-top:10px;">
+        © 2026 SOLEVA. Магазин обуви.
+    </p>
+
+</footer>
+
+
+<!-- CART -->
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<aside class="cart" id="cart">
+
+    <div class="cart-header">
+
+        <h2>Корзина</h2>
+
+        <button class="icon-btn" onclick="closeCart()">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="cart-items" id="cartItems">
+
+        <p style="color:var(--muted);">
+            Корзина пока пустая.
+        </p>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="total">
+
+            <span>Итого:</span>
+
+            <span id="total">
+                0 сум
+            </span>
+
+        </div>
+
+        <button
+            class="btn btn-primary"
+            style="width:100%;"
+            onclick="openCheckout()"
+        >
+            Оформить заказ
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- CHECKOUT -->
+
+<div class="checkout" id="checkout">
+
+    <div class="checkout-box">
+
+        <span
+            class="checkout-close"
+            onclick="closeCheckout()"
+        >
+            ×
+        </span>
+
+        <h2>Оформление заказа</h2>
+
+        <form
+            class="checkout-form"
+            onsubmit="finishOrder(event)"
+        >
+
+            <input
+                type="text"
+                placeholder="Ваше имя"
+                required
+            >
+
+            <input
+                type="tel"
+                placeholder="Номер телефона"
+                required
+            >
+
+            <input
+                type="text"
+                placeholder="Адрес доставки"
+                required
+            >
+
+            <button class="btn btn-primary">
+                Подтвердить заказ
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
